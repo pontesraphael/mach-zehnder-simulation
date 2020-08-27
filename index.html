@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Interferômetro de Mach-Zehnder</title>
+        
+        <meta charset="UTF-8">
+        <meta name="author" content="Raphael Pontes">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style> 
+            body {
+            background: #eeeeee;
+            }
+            
+            #controls {
+            position: absolute;
+            left: 25px;
+            top: 25px;
+            }
+            
+            #opcao {
+                position: absolute;
+                left: 50px;
+                top: 340px;
+            }
+            
+            #opcao2 {
+                position: absolute;
+                left: 50px;
+                top: 370px;
+            }
+            
+            #canvas {
+                margin-left: 10px;
+                margin-top: 15px;
+                background: #ffffff;
+                -webkit-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+                -moz-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+                box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+            }
+            
+            #graphCanvas {
+                position: absolute;
+                left: 880px;
+                top: 21px;
+                -webkit-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+                -moz-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+                box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+            }
+            
+            #tableCanvas {
+                position: absolute;
+                left: 880px;
+                top: 290px;
+                background: #ffffff;
+                -webkit-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+                -moz-box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+                box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+            }
+            
+            #text {
+            font:Helvetica;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <canvas id='canvas' width='850' height='470'>
+            Canvas not supported
+        </canvas>
+                      
+        <div id="controls">
+            <input type="radio" id="fotonRadio" style="vertical-align: middle" 
+                   name="radioEmissor" checked/>Fóton
+            <input type="radio" id="ondaRadio" style="vertical-align: middle" 
+                   name="radioEmissor"/>Onda
+	    <input type="checkbox" id="semiCheck" style="vertical-align: middle"
+		           name="semiEspelho2"/>Semi-espelho 2
+            <input id="iniciarButton" type="button" value="Iniciar"/>
+            <input id="pararButton" type="button" value="Parar" disabled/>
+            <input id="turboButton" type="button" value="TURBO!" disabled/>
+        </div>
+        
+        <div id="opcao">
+            <input type="checkbox" id="detecCheck" style="vertical-align: middle"
+                   name="terceiroDetec"/>Terceiro detector
+        </div>
+        
+        <div id="opcao2">
+            <input type="checkbox" id="caminhoCheck" style="vertical-align: middle"
+                   name="detecCaminho"/>Detector de caminho
+        </div>
+        
+        <div id="graphCanvas"></div>
+        
+        <canvas id="tableCanvas" width='300' height='200'></canvas>
+             
+        <script src="interferometer.js"></script>
+        
+    </body>
+</html>
