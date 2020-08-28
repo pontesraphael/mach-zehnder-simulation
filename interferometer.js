@@ -1,5 +1,5 @@
 /* 
- * Apenas um teste
+ * O interferômetro de mach-zehnder
  */
 
 var context = document.getElementById("canvas").getContext("2d");
@@ -183,7 +183,7 @@ function interf() {
     context.closePath();
     context.fillStyle = "#333";
     context.font = "bold 12px helvetica";
-    context.fillText("Detector 1",730,185);
+    context.fillText("Detector 2",730,185);
     
     context.beginPath();
     context.arc(651, 50, 10, 0, 2*Math.PI, false);
@@ -192,7 +192,7 @@ function interf() {
     context.closePath();
     context.fillStyle = "#333";
     context.font = "bold 12px helvetica";
-    context.fillText("Detector 2", 680, 50);
+    context.fillText("Detector 1", 680, 50);
         
     context.restore();
 };
@@ -283,6 +283,12 @@ function ondas() {
         context.strokeStyle = "blue";
         context.moveTo(295,347.5);
         context.lineTo(350,347.5);
+		var triang=new Path2D();
+		triang.moveTo(343,355);
+		triang.lineTo(356,340);
+		triang.lineTo(343,340);
+		context.fillStyle = "blue";
+		context.fill(triang);
         context.stroke();
         context.closePath();
 
@@ -362,7 +368,7 @@ function ondas() {
             context.fill();
             context.closePath();
             
-            graph.update([50,0,50]);        
+            graph.update([0,50,50]);        
         };
     } else {
         context.beginPath();
@@ -370,7 +376,13 @@ function ondas() {
         context.lineWidth = "15";
         context.strokeStyle = "blue";
         context.moveTo(295,347.5);
-        context.lineTo(350,347.5);
+        context.lineTo(343,347.5);
+		var triang=new Path2D();
+		triang.moveTo(343,355);
+		triang.lineTo(356,340);
+		triang.lineTo(343,340);
+		context.fillStyle = "blue";
+		context.fill(triang);
         context.stroke();
         context.closePath();
 
@@ -416,6 +428,12 @@ function ondas() {
             context.moveTo(658,150);
             context.lineTo(715,150);
             context.stroke();
+			var triang=new Path2D();
+			triang.moveTo(658,142.5);
+			triang.lineTo(646,157.5);
+			triang.lineTo(658,157.5);
+			context.fillStyle = "blue";
+			context.fill(triang);
             context.globalAlpha = 1;
             context.closePath();
 
@@ -425,7 +443,7 @@ function ondas() {
             context.fill();
             context.closePath();
             
-            graph.update([100,0,0]);
+            graph.update([0,100,0]);
         } else {
             context.beginPath();
             context.globalAlpha = 0.4;
@@ -758,7 +776,7 @@ function botaoIniciar() {
                             context.arc(757, 150, 7, 0, 2*Math.PI, false); //d1
                             context.fill();
                             context.closePath();
-                            d1 += 1;
+                            d2 += 1;
                             var total = d1 + d2 + d3;
                             var porc1 = (d1/total)*100;
                             var porc2 = (d2/total)*100;
@@ -796,7 +814,7 @@ function botaoIniciar() {
                             context.arc(651, 50, 7, 0, 2*Math.PI, false);
                             context.fill();
                             context.closePath();
-                            d2 += 1;
+                            d1 += 1;
                             var total = d1 + d2 + d3;
                             var porc1 = (d1/total)*100;
                             var porc2 = (d2/total)*100;
@@ -837,7 +855,7 @@ function botaoIniciar() {
                         context.arc(757, 150, 7, 0, 2*Math.PI, false);
                         context.fill();
                         context.closePath();
-                        d1 += 1;
+                        d2 += 1;
                         var total = d1 + d2 + d3;
                         var porc1 = (d1/total)*100;
                         var porc2 = (d2/total)*100;
@@ -917,7 +935,7 @@ function botaoIniciar() {
                             context.arc(757, 150, 7, 0, 2*Math.PI, false);
                             context.fill();
                             context.closePath();
-                            d1 += 1;
+                            d2 += 1;
                             var total = d1 + d2 + d3;
                             var porc1 = (d1/total)*100;
                             var porc2 = (d2/total)*100;
@@ -955,7 +973,7 @@ function botaoIniciar() {
                             context.arc(651, 50, 7, 0, 2*Math.PI, false);
                             context.fill();
                             context.closePath();
-                            d2 += 1;
+                            d1 += 1;
                             var total = d1 + d2 + d3;
                             var porc1 = (d1/total)*100;
                             var porc2 = (d2/total)*100;
@@ -996,7 +1014,7 @@ function botaoIniciar() {
                             context.arc(651, 50, 7, 0, 2*Math.PI, false);
                             context.fill();
                             context.closePath();
-                            d2 += 1;
+                            d1 += 1;
                             var total = d1 + d2 + d3;
                             var porc1 = (d1/total)*100;
                             var porc2 = (d2/total)*100;
@@ -1046,7 +1064,7 @@ function botaoIniciar() {
                             context.arc(757, 150, 7, 0, 2*Math.PI, false);
                             context.fill();
                             context.closePath();
-                            d1 += 1;
+                            d2 += 1;
                             var total = d1 + d2 + d3;
                             var porc1 = (d1/total)*100;
                             var porc2 = (d2/total)*100;
@@ -1097,7 +1115,7 @@ function botaoIniciar() {
                         context.arc(757, 150, 7, 0, 2*Math.PI, false);
                         context.fill();
                         context.closePath();
-                        d1 += 1;
+                        d2 += 1;
                         var total = d1 + d2 + d3;
                         var porc1 = (d1/total)*100;
                         var porc2 = (d2/total)*100;
@@ -1136,7 +1154,7 @@ function botaoIniciar() {
                         context.arc(651, 50, 7, 0, 2*Math.PI, false);
                         context.fill();
                         context.closePath();
-                        d2 += 1;
+                        d1 += 1;
                         var total = d1 + d2 + d3;
                         var porc1 = (d1/total)*100;
                         var porc2 = (d2/total)*100;
@@ -1188,7 +1206,7 @@ function botaoIniciar() {
                     context.arc(757, 150, 7, 0, 2*Math.PI, false);
                     context.fill();
                     context.closePath();
-                    d1 += 1;
+                    d2 += 1;
                     var total = d1 + d2 + d3;
                     var porc1 = Math.floor((d1/total)*100);
                     var porc2 = Math.floor((d2/total)*100);
@@ -1225,7 +1243,7 @@ function botaoIniciar() {
                         context.arc(757, 150, 7, 0, 2*Math.PI, false);
                         context.fill();
                         context.closePath();
-                        d1 += 1;
+                        d2 += 1;
                         var total = d1 + d2 + d3;
                         var porc1 = (d1/total)*100;
                         var porc2 = (d2/total)*100;
@@ -1263,7 +1281,7 @@ function botaoIniciar() {
                         context.arc(651, 50, 7, 0, 2*Math.PI, false);
                         context.fill();
                         context.closePath();
-                        d2 += 1;
+                        d1 += 1;
                         var total = d1 + d2 + d3;
                         var porc1 = (d1/total)*100;
                         var porc2 = (d2/total)*100;
@@ -1335,7 +1353,14 @@ function botaoIniciar() {
         pararButton.disabled = false;
         ondaRadio.disabled = true;
         fotonRadio.disabled = true;
-                
+        tableContext.clearRect(0, 0, tableCanvas.width, tableCanvas.height);
+        contadorFunc();
+        tableContext.font = "bold 16px Helvetica";
+        tableContext.fillStyle = "000066";
+        tableContext.fillText(d1.toString(), 170, 55);
+        tableContext.fillText(d2.toString(), 170, 105);
+        tableContext.fillText(d3.toString(), 170, 155);
+                        
         pararButton.onclick= function(e) {
             clicado = false;
             iniciarButton.disabled = false;
@@ -1531,7 +1556,7 @@ turboButton.onclick = function(e) {
                 } else { //agora a divisão se dará no segundo s-e
                     var numAleat4 = Math.floor(Math.random() * 2);
                     if (numAleat4 === 1) {
-                        d1 += 1;
+                        d2 += 1;
                         var total = d1 + d2 + d3;
                         var porc1 = (d1/total)*100;
                         var porc2 = (d2/total)*100;
@@ -1543,7 +1568,7 @@ turboButton.onclick = function(e) {
                         tableContext.fillText(d2.toString(), 170, 105);
                         tableContext.fillText(d3.toString(), 170, 155);
                     } else {
-                        d2 += 1;
+                        d1 += 1;
                         var total = d1 + d2 + d3;
                         var porc1 = (d1/total)*100;
                         var porc2 = (d2/total)*100;
@@ -1585,7 +1610,7 @@ turboButton.onclick = function(e) {
                     tableContext.fillText(d2.toString(), 170, 105);
                     tableContext.fillText(d3.toString(), 170, 155);
                 } else {
-                    d1 += 1;
+                    d2 += 1;
                     var total = d1 + d2 + d3;
                     var porc1 = (d1/total)*100;
                     var porc2 = (d2/total)*100;
@@ -1621,7 +1646,7 @@ turboButton.onclick = function(e) {
             context.closePath();
             if (numAleat3 === 1) { //aqui não importa se o semi-espelho está
                                    //no lugar ou não, pois sempre é 50% p. cada detec.
-                d1 += 1;
+                d2 += 1;
                 var total = d1 + d2 + d3;
                 var porc1 = (d1/total)*100;
                 var porc2 = (d2/total)*100;
@@ -1633,7 +1658,7 @@ turboButton.onclick = function(e) {
                 tableContext.fillText(d2.toString(), 170, 105);
                 tableContext.fillText(d3.toString(), 170, 155);
             } else {
-                d2 += 1;
+                d1 += 1;
                 var total = d1 + d2 + d3;
                 var porc1 = (d1/total)*100;
                 var porc2 = (d2/total)*100;
@@ -1659,7 +1684,7 @@ turboButton.onclick = function(e) {
                 context.fill();
                 context.closePath();
                 
-                d1 += 1;
+                d2 += 1;
                 var total = d1 + d2 + d3;
                 var porc1 = (d1/total)*100;
                 var porc2 = (d2/total)*100;
@@ -1688,7 +1713,7 @@ turboButton.onclick = function(e) {
                 context.closePath();
                 
                 if (numAleat3 === 1) {
-                    d1 += 1;
+                    d2 += 1;
                     var total = d1 + d2 + d3;
                     var porc1 = (d1/total)*100;
                     var porc2 = (d2/total)*100;
@@ -1700,7 +1725,7 @@ turboButton.onclick = function(e) {
                     tableContext.fillText(d2.toString(), 170, 105);
                     tableContext.fillText(d3.toString(), 170, 155);
                 } else {
-                    d2 += 1;
+                    d1 += 1;
                     var total = d1 + d2 + d3;
                     var porc1 = (d1/total)*100;
                     var porc2 = (d2/total)*100;
